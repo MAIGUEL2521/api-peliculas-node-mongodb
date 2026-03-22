@@ -1,0 +1,123 @@
+body {
+  margin: 0;
+  min-height: 100vh;
+  background: linear-gradient(rgba(6, 11, 26, 0.65), rgba(6, 11, 26, 0.75)), url('https://images.unsplash.com/photo-1497032628192-86f99bcd76bc?ixlib=rb-4.0.3&auto=format&fit=crop&w=1400&q=80') no-repeat center center fixed;
+  background-size: cover;
+  color: white;
+}
+
+.App {
+  min-height: 100vh;
+  background: transparent;
+  color: white;
+}
+
+/* Fallback sólido si la imagen no carga */
+@supports not (background-image: url('x')) {
+  body {
+    background: linear-gradient(90deg, #0f0f1b, #2e2f45);
+  }
+}
+
+.navbar {
+  background-color: rgba(0, 0, 0, 0.8) !important;
+  backdrop-filter: blur(10px);
+}
+
+.navbar-brand {
+  font-weight: bold;
+  font-size: 1.5rem;
+}
+
+.nav-link {
+  color: white !important;
+  transition: color 0.3s;
+}
+
+.nav-link:hover {
+  color: #ffcc00 !important;
+}
+
+.container {
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+  padding: 20px;
+  margin-top: 20px;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.btn {
+  border-radius: 25px;
+  font-weight: bold;
+  transition: all 0.3s;
+}
+
+.btn-primary {
+  background-color: #ffcc00;
+  border-color: #ffcc00;
+  color: black;
+}
+
+.btn-primary:hover {
+  background-color: #e6b800;
+  border-color: #e6b800;
+  transform: scale(1.05);
+}
+
+.btn-warning {
+  background-color: #ff6b35;
+  border-color: #ff6b35;
+  color: white;
+}
+
+.btn-warning:hover {
+  background-color: #e55a2b;
+  transform: scale(1.05);
+}
+
+.btn-danger {
+  background-color: #dc3545;
+  border-color: #dc3545;
+}
+
+.btn-danger:hover {
+  background-color: #c82333;
+  transform: scale(1.05);
+}
+
+.table {
+  background-color: rgba(255, 255, 255, 0.9);
+  color: black;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.table th {
+  background-color: #343a40;
+  color: white;
+}
+
+.form-control {
+  border-radius: 10px;
+  border: 1px solid #ccc;
+}
+
+.form-control:focus {
+  border-color: #ffcc00;
+  box-shadow: 0 0 5px rgba(255, 204, 0, 0.5);
+}
+
+h1, h2 {
+  color: #ffcc00;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.fade-in {
+  animation: fadeIn 0.5s ease-in;
+}
