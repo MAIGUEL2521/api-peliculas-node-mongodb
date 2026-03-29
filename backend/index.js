@@ -63,10 +63,9 @@ getConnection().then(async () => {
     const tiposInsertados = await Tipo.insertMany(tiposSeed);
     console.log('🟢 3 Tipos cargados.');
 
-    // ========== SEED DE PELÍCULAS (CON TODAS LAS ASOCIACIONES) ==========
+    // ========== SEED DE PELÍCULAS ==========
     const generoAccion = generosInsertados.find(g => g.nombre === 'Acción');
     const generoDrama = generosInsertados.find(g => g.nombre === 'Drama');
-    const generoTerror = generosInsertados.find(g => g.nombre === 'Terror');
 
     const directorNolan = directoresInsertados.find(d => d.nombres === 'Christopher Nolan');
     const directorSpielberg = directoresInsertados.find(d => d.nombres === 'Steven Spielberg');
@@ -131,7 +130,7 @@ getConnection().then(async () => {
       }
     ];
     await Media.insertMany(peliculasSeed);
-    console.log('🟢 4 Películas cargadas con todas las asociaciones.');
+    console.log('🟢 4 Películas cargadas.');
     console.log('✅ Base de datos inicializada correctamente.');
 
   } catch (seedError) {
@@ -150,6 +149,11 @@ app.use('/api/generos', require('./routes/genero'));
 app.use('/api/productoras', require('./routes/productora'));
 app.use('/api/tipos', require('./routes/tipo'));
 app.use('/api/medias', require('./routes/media'));
+
+// 👇 ESTA ES LA SOLUCIÓN
+app.get("/", (req, res) => {
+  res.send("API funcionando correctamente 🚀");
+});
 
 // puerto
 const PORT = process.env.PORT || 4000;
